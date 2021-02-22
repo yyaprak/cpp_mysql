@@ -1,0 +1,7 @@
+CC = g++
+CFLAGS = `mysql_config --libs`
+LIBS = `mysql_config --libs`
+all:
+	$(CC) test_1.c -o test $(CFLAGS)
+clean:
+	rm -f test_1*.o

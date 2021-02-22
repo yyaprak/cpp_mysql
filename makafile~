@@ -1,0 +1,9 @@
+CC = gcc 
+CFLAGS = -lm -lstdc++  -Wall -O2
+LIBS   = `mysql_config -–libs`
+test_1: test_1.o
+	$(CC) $(CFLAGS) $(LIBS) -o test_1 test_1.o
+test.o: test_1.c
+	$(CC) $(CFLAGS) -c test_1.c
+clean:
+	rm -f test_1 *.o
